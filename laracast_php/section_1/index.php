@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lara-cast</title>
-</head>
-<body>
-
 <?php
 $books = [
     [
@@ -44,23 +33,8 @@ function filter($items, $fn)
 }
 */
 
-$filteredBooks = array_filter($books, function ($book){
-    return $book['releaseYear'] >= 2000;
+$filteredBooks = array_filter($books, function ($book) {
+    return $book['releaseYear'] >= 1950 && $book['releaseYear'] <= 2020;
 });
 
-?>
-<ul>
-    <?php
-    foreach ($filteredBooks as $book):
-        ?>
-        <li>
-            <a href="<?= $book['purchaseUrl'] ?>">
-                <?= $book['name']; ?> (<?= $book['releaseYear'] ?> - By <?= $book['author'] ?>)
-            </a>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-
-</body>
-</html>
+require "index.view.php";

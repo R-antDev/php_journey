@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e5f64036-e22c-4d00-9d1a-9cc3fd72d3f2" name="local" url="http://localhost">
+        <fileTransfer mountedRoot="C:\Ant-Dev\laracasts" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

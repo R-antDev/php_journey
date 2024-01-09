@@ -1,15 +1,8 @@
 <?php
 
 require 'functions.php';
+require 'Database.php';
+require 'Response.php';
+require 'router.php';
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'] ;
 
-
-
-if ($uri === '/index'){
-    require 'controllers/index.php';
-}elseif ($uri === '/about') {
-    require 'controllers/about.php';
-}else{
-    dd($uri);
-}

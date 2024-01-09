@@ -4,7 +4,12 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <p>Hello. Welcome to the contact page.</p>
+        <p>
+            <?= $note['notes'] ?>
+        </p>
+        <p class="mt-4 font-bold">
+            <a href="/notes" class="text-blue-500 underline">go back.</a>
+        </p>
     </div>
 </main>
 

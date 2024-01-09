@@ -5,7 +5,7 @@
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <p>
-            <?= $note['notes'] ?>
+            <?= htmlspecialchars($note['body']) ?>
         </p>
         <p class="mt-4 font-bold">
             <a href="/notes" class="text-blue-500 underline">go back.</a>

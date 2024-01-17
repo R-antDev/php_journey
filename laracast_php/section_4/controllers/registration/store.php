@@ -32,7 +32,7 @@ if ($user) {
     header('location: /');
     exit();
 } else {
-    $db->query('INSERT INTO users(email, password) VALUES (:email, :password)', [
+    $db->query('INSERT INTO users (email, password) VALUES (:email, :password)', [
         'email' => $email,
         'password' => $password
     ]);

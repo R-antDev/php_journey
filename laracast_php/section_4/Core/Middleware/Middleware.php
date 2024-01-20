@@ -17,7 +17,7 @@ class Middleware
         $middleware = static :: MAP[$key] ?? false;
 
         if (!$middleware) {
-            throw new \Exception("No matching middleware found for {$key}");
+            throw new \RuntimeException("No matching middleware found for {$key}");
         }
 
         (new $middleware)->handle();

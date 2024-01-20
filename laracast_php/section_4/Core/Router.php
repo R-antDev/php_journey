@@ -50,6 +50,9 @@ class Router
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
     }
 
+    /**
+     * @throws \Exception
+     */
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {

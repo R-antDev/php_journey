@@ -50,9 +50,7 @@ class Router
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
     }
 
-    /**
-     * @throws \Exception
-     */
+
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
@@ -60,7 +58,7 @@ class Router
 
                 Middleware::resolve(($route['middleware']));
 
-                return require base_path($route['controller']);
+                return require base_path('Http/controllers/'.$route['controller']);
             }
         }
         $this->abort();

@@ -5,21 +5,20 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-session_start();
+
+
 
 use Core\Router;
 use Core\Session;
 use Core\ValidationException;
 
+session_start();
 const BASE_PATH = __DIR__.'/../';
+require BASE_PATH.'vendor/autoload.php';
+
 
 require BASE_PATH.'Core/functions.php';
 
-spl_autoload_register(static function ($class) {
-
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    require base_path("$class.php");
-});
 
 require base_path('bootstrap.php');
 

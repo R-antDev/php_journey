@@ -1,0 +1,16 @@
+{
+    "name": "emons/section_4",
+    "authors": [
+        {
+            "name": "Shariar Hasan Emon",
+            "email": "imemon.sh@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}

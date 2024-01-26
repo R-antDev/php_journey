@@ -1,26 +1,20 @@
 <?php
 
 use Core\Authenticator;
-use Core\Session;
 use Http\Forms\LoginForm;
 
-$email = $_POST['email'];
-$password = $_POST['password'];
 
-$form = new LoginForm();
-if ($form->validate($email, $password)) {
+$form = LoginForm::validate($attributes = [
+    'email' => $email,
+    'password' => $password
+]);
 
-    if ((new Authenticator)->attempt($email, $password)) {
-        redirect('/');
-    }
-    $form->error('email', 'No user record found with that email address and password');
+$signedIn = (new Authenticator)->attempt($attributes['email'], $attributes['password']);
 
+if (!$signedIn) {
+    $form->error('email', 'No user record found with that email address and password')->throw();
 }
-
-
-Session::flash('errors', $form->errors());
-
-return redirect('/login');
+redirect('/');
 
 
 
